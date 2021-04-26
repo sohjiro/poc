@@ -1,0 +1,39 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold"><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+    <p>Peace of mind from prototype to production</p>
+
+    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#preview" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" phx-click="show_preview">Preview</a>
+
+    <button type="submit" class="btn btn-primary" phx-click="save-everything">Save</button>
+
+  </div>
+</div>
+
+
+<p>
+  <a class="btn btn-link" data-bs-toggle="collapse" href="#userForm" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" phx-click="show_user">User form</a>
+  <a class="btn btn-link" data-bs-toggle="collapse" href="#addressForm" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" phx-click="show_address">Address form</a>
+</p>
+
+<div class="row">
+  <div class="collapse multi-collapse <%= @show_user %>" id="userForm">
+    <div class="row">
+      <%= live_component @socket, PocWeb.Complex.UserComponent, user: @user, changeset: @changeset, id: "some" %>
+    </div>
+  </div>
+
+  <div class="collapse <%= @show_address %>" id="addressForm">
+    <div class="row">
+      Hello
+    </div>
+  </div>
+
+  <div class="collapse <%= @show_preview %>" id="preview">
+    <div class="row">
+      Preview
+      <%= @changeset.changes[:name] %>
+    </div>
+  </div>
+</div>
+

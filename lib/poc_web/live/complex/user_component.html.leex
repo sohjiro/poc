@@ -1,0 +1,53 @@
+<div class="col">
+  <ul>
+    <li>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </li>
+
+    <li>
+      <strong>Last name:</strong>
+      <%= @user.last_name %>
+    </li>
+
+    <li>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </li>
+
+    <li>
+      <strong>Phone:</strong>
+      <%= @user.phone %>
+    </li>
+  </ul>
+</div>
+
+<div class="col">
+
+  <%= f = form_for @changeset, "#", phx_change: "validate" %>
+    <div>
+      <%= label f, :name, class: "form-label" %>
+      <%= text_input f, :name, class: "form-control" %>
+      <%= error_tag f, :name %>
+    </div>
+
+    <div>
+      <%= label f, :last_name, class: "form-label" %>
+      <%= text_input f, :last_name, class: "form-control" %>
+      <%= error_tag f, :last_name %>
+    </div>
+
+    <div>
+      <%= label f, :email, class: "form-label" %>
+      <%= text_input f, :email, class: "form-control" %>
+      <%= error_tag f, :email %>
+    </div>
+
+    <div>
+      <%= label f, :phone, class: "form-label" %>
+      <%= text_input f, :phone, class: "form-control" %>
+      <%= error_tag f, :phone %>
+    </div>
+  </form>
+
+</div>
