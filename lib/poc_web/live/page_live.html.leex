@@ -30,9 +30,21 @@
   </div>
 
   <div class="collapse <%= @show_preview %>" id="preview">
+    <h1>Preview</h1>
+
     <div class="row">
-      Preview
-      <%= @changeset.changes[:name] %>
+      <div class="col-3">Name</div>
+      <div class="col-9"><%= @changeset.changes[:name] %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Last name</div>
+      <div class="col-9"><%= @changeset.changes[:last_name] %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Email</div>
+      <div class="col-9"><%= @changeset.changes[:email] %></div>
     </div>
   </div>
 </div>
